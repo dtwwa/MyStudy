@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="百度一下，你就知道"
+            android:ellipsize="end"
+            android:imeOptions="actionDone"
+            android:maxLines="1" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/ps"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+
+        android:progressDrawable="@drawable/progressbar_color" />
+    <!--网页主体-->
+    <com.animation_study.custom.MyWebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!--底部导航-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/bt_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="后退" />
+
+        <Button
+            android:id="@+id/bt_forword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="前进" />
+
+        <Button
+            android:id="@+id/bt_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="主页" />
+    </LinearLayout>
+</LinearLayout>

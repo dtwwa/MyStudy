@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.animation_study">
+
+    <!-- 安卓读写sd权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 联网权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 相机权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 屏幕亮度相关 -->
+    <!-- 屏幕休眠权限 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <application
+        android:name=".CrashApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/study"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.TweenAnimationActivity" />
+        <activity android:name=".activity.PropertyAnimationActivity" />
+        <activity android:name=".activity.BitmapActivity" />
+        <activity android:name=".activity.MappingActivity" />
+        <activity android:name=".activity.DrawingBoardActivity" />
+        <activity android:name=".activity.MaskFilterActivity" />
+        <activity
+            android:name=".activity.BrowserActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <!-- android:windowSoftInputMode="stateVisible|adjustResize"  activity上移 -->
+        <!-- android:windowSoftInputMode="adjustPan"  让键盘覆盖activity -->
+        <activity android:name=".activity.SongActivity" />
+        <activity android:name=".activity.VideoActivity" />
+
+        <service android:name=".service.SongService" />
+
+        <activity android:name=".activity.FullScreenActivity" />
+        <activity android:name=".activity.TextureViewActivity" />
+        <activity
+            android:name=".activity.EncVideoViewActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ListVideoActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.SystemSetActivity" />
+        <activity android:name=".activity.TextureView2Activity" />
+        <activity
+            android:name=".activity.RecycleTextureActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.GSYVIdeoActibity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.StudyJCVideoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.RecyAnimationActivity" />
+        <activity android:name=".activity.AutoTextActivity" />
+        <activity android:name=".activity.ProgressViewActivity" />
+        <activity android:name=".activity.ParallaxAnimationActivity" />
+        <activity android:name=".activity.RetrofitActivity" />
+        <activity android:name=".login.LoginActivity"></activity>
+    </application>
+
+</manifest>
