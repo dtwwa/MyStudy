@@ -39,6 +39,7 @@ import com.animation_study.activity.TextureView2Activity;
 import com.animation_study.activity.TextureViewActivity;
 import com.animation_study.activity.TweenAnimationActivity;
 import com.animation_study.activity.VideoActivity;
+import com.animation_study.login.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -336,7 +337,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void login(View v) {
-
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 
 }
