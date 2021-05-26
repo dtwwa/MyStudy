@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    tools:context="com.animation_study.activity.EventStudyActivity">
+
+    <com.animation_study.custom.EventStudyViewGroup
+        android:id="@+id/parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="242dp"
+        tools:layout_editor_absoluteY="295dp">
+
+        <com.animation_study.custom.EventStudyView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="孩子1" />
+
+        <com.animation_study.custom.EventStudyView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="孩子2" />
+    </com.animation_study.custom.EventStudyViewGroup>
+
+    <CheckBox
+        android:id="@+id/cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="344dp"
+        android:text="父控件拦截事件"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="238dp" />
+</android.support.constraint.ConstraintLayout>

@@ -13,15 +13,20 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.PopupWindow;
+import android.widget.Toast;
 
 import com.animation_study.activity.AutoTextActivity;
 import com.animation_study.activity.BitmapActivity;
 import com.animation_study.activity.BrowserActivity;
 import com.animation_study.activity.DrawingBoardActivity;
 import com.animation_study.activity.EncVideoViewActivity;
+import com.animation_study.activity.EventStudyActivity;
 import com.animation_study.activity.GSYVIdeoActibity;
 import com.animation_study.activity.ListVideoActivity;
 import com.animation_study.activity.MappingActivity;
@@ -32,7 +37,9 @@ import com.animation_study.activity.PropertyAnimationActivity;
 import com.animation_study.activity.RecyAnimationActivity;
 import com.animation_study.activity.RecycleTextureActivity;
 import com.animation_study.activity.RetrofitActivity;
+import com.animation_study.activity.ScrollBigActivity;
 import com.animation_study.activity.SongActivity;
+import com.animation_study.activity.SqlitActivity;
 import com.animation_study.activity.StudyJCVideoActivity;
 import com.animation_study.activity.SystemSetActivity;
 import com.animation_study.activity.TextureView2Activity;
@@ -40,6 +47,10 @@ import com.animation_study.activity.TextureViewActivity;
 import com.animation_study.activity.TweenAnimationActivity;
 import com.animation_study.activity.VideoActivity;
 import com.animation_study.login.LoginActivity;
+import com.tencent.connect.share.QQShare;
+import com.tencent.tauth.IUiListener;
+import com.tencent.tauth.Tencent;
+import com.tencent.tauth.UiError;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -341,4 +352,77 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void popup(View v) {
+        View popup = getLayoutInflater().inflate(R.layout.layout_popup, null);
+        PopupWindow popupWindow = new PopupWindow(popup,
+                WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT, true);
+        popupWindow.setContentView(popup);
+        //显示PopupWindow
+        View rootview = LayoutInflater.from(MainActivity.this).inflate(R.layout.activity_main, null);
+        popupWindow.showAtLocation(rootview, Gravity.BOTTOM, 0, 0);
+    }
+
+    public void asdropdown(View v) {
+        PopupWindow popupWindow;
+        View contentView = LayoutInflater.from(MainActivity.this).inflate(R.layout.layout_popup, null);
+        popupWindow = new PopupWindow(contentView);
+        popupWindow.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
+        popupWindow.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
+        popupWindow.showAsDropDown(v);
+    }
+
+    public void event(View v) {
+        Intent intent = new Intent(this, EventStudyActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * 分享到QQ
+     */
+    public void share(View v) {
+        String APP_ID = getIntent().getScheme();
+        //实例化Tencent类
+        Tencent mTencent = Tencent.createInstance(APP_ID, getApplicationContext());
+        final Bundle bundle = new Bundle();
+        //图文分享
+        bundle.putInt(QQShare.SHARE_TO_QQ_KEY_TYPE, QQShare.SHARE_TO_QQ_TYPE_DEFAULT);
+        //跳转URL
+        bundle.putString(QQShare.SHARE_TO_QQ_TARGET_URL, "跳转URL");
+        //分享的标题
+        bundle.putString(QQShare.SHARE_TO_QQ_TITLE, "Who are you？");
+        //分享的消息摘要
+        bundle.putString(QQShare.SHARE_TO_QQ_SUMMARY, "Hi，我在测试QQ分享接口");
+        mTencent.shareToQQ(this, bundle, new BaseUIListener());
+    }
+
+    public void sqlit(View v) {
+        Intent intent = new Intent(this, SqlitActivity.class);
+        startActivity(intent);
+    }
+
+    public void scrollB(View v) {
+        Intent intent = new Intent(this, ScrollBigActivity.class);
+        startActivity(intent);
+    }
+
+    class BaseUIListener implements IUiListener {
+
+        @Override
+        public void onComplete(Object o) {
+
+            Toast.makeText(getApplicationContext(), "分享成功\n" +
+                    o.toString(), Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onError(UiError uiError) {
+            Toast.makeText(getApplicationContext(), "分享失败\n" +
+                    uiError.toString(), Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onCancel() {
+            Toast.makeText(getApplicationContext(), "分享取消\n", Toast.LENGTH_SHORT).show();
+        }
+    }
 }

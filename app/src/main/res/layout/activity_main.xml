@@ -36,6 +36,19 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="popup"
+            android:text="popupWindow" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="asdropdown"
+            android:text="showAsDropDown" />
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:onClick="notification"
             android:text="Notification(状态栏通知)" />
 
@@ -177,6 +190,31 @@
             android:layout_height="wrap_content"
             android:onClick="login"
             android:text="登录" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="event"
+            android:text="事件分发拦截" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="share"
+            android:text="分享到QQ" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sqlit"
+            android:text="SQLIT数据库" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="scrollB"
+            android:text="下滑放大" />
+
 
     </LinearLayout>
 </ScrollView>

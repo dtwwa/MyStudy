@@ -10,6 +10,20 @@ import android.widget.TextView;
 
 import com.animation_study.R;
 
+/**
+ * String name = reName.getText().toString();
+ * String pwd = rePwd.getText().toString();
+ * String email = reEmail.getText().toString();
+ * String namer = "[a-zA-Z]{6,12}";
+ * if (!Pattern.matches(namer, name)) {
+ * Toast.makeText(getApplicationContext(), "用户名格式错误", Toast.LENGTH_SHORT).show();
+ * } else if (!Pattern.matches("[a-zA-Z0-9]{3,6}", pwd)) {
+ * Toast.makeText(getApplicationContext(), "密码格式错误", Toast.LENGTH_SHORT).show();
+ * } else if (!Pattern.matches("^[A-Za-z\\d]+([-_.][A-Za-z\\d]+)*@([A-Za-z\\d]+[-.])+[A-Za-z\\d]{2,4}$", email)) {
+ * Toast.makeText(getApplicationContext(), "邮箱格式错误", Toast.LENGTH_SHORT).show();
+ * }
+ */
+
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView tvName;
     private TextView tvPwd;

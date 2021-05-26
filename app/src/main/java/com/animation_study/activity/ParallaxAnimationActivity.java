@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import com.animation_study.R;
 import com.animation_study.custom.ClockLoadingView;
 import com.animation_study.custom.GooView;
+import com.animation_study.custom.ParticleMotionView;
 import com.animation_study.custom.RotateSpread;
 import com.animation_study.custom.ScanView;
 import com.animation_study.custom.WaterRippleView;
@@ -46,7 +47,7 @@ public class ParallaxAnimationActivity extends AppCompatActivity {
     RotateSpread mRotateSpread;
     private WaterRippleView waterRippleView;
     private GooView mGooView;
-
+    ParticleMotionView motionView;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -127,11 +128,15 @@ public class ParallaxAnimationActivity extends AppCompatActivity {
         ScanView scanView = new ScanView(getApplicationContext());
         scanView.setLayoutParams(ll);
 
+        motionView = new ParticleMotionView(getApplicationContext());
+        motionView.setLayoutParams(ll);
+
         views.add(mRotateSpread);
         views.add(mClockLoadingView);
         views.add(waterRippleView);
         views.add(mGooView);
         views.add(scanView);
+        views.add(motionView);
         mViewPager.setAdapter(new PagerAdapter() {
             @Override
             public int getCount() {
