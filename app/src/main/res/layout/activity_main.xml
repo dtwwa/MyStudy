@@ -215,6 +215,12 @@
             android:onClick="scrollB"
             android:text="下滑放大" />
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="banner"
+            android:text="Banner广告滚动" />
+
 
     </LinearLayout>
 </ScrollView>

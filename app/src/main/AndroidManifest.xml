@@ -30,7 +30,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
                 <!-- 我的App ID，要保留tencent -->
-                <data android:scheme="tencent.css" />
             </intent-filter>
         </activity>
         <activity android:name=".activity.TweenAnimationActivity" />
@@ -85,7 +84,8 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity android:name=".activity.SqlitActivity" />
-        <activity android:name=".activity.ScrollBigActivity"></activity>
+        <activity android:name=".activity.ScrollBigActivity" />
+        <activity android:name=".activity.BannerActivity"></activity>
     </application>
 
 </manifest>

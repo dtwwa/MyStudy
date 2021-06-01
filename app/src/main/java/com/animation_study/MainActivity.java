@@ -22,6 +22,7 @@ import android.widget.PopupWindow;
 import android.widget.Toast;
 
 import com.animation_study.activity.AutoTextActivity;
+import com.animation_study.activity.BannerActivity;
 import com.animation_study.activity.BitmapActivity;
 import com.animation_study.activity.BrowserActivity;
 import com.animation_study.activity.DrawingBoardActivity;
@@ -404,6 +405,12 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ScrollBigActivity.class);
         startActivity(intent);
     }
+
+    public void banner(View v) {
+        Intent intent = new Intent(this, BannerActivity.class);
+        startActivity(intent);
+    }
+
 
     class BaseUIListener implements IUiListener {
 
