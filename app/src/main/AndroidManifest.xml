@@ -85,7 +85,8 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity android:name=".activity.SqlitActivity" />
         <activity android:name=".activity.ScrollBigActivity" />
-        <activity android:name=".activity.BannerActivity"></activity>
+        <activity android:name=".activity.BannerActivity" />
+        <activity android:name=".activity.SpanActivity"></activity>
     </application>
 
 </manifest>

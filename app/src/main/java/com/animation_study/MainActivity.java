@@ -40,6 +40,7 @@ import com.animation_study.activity.RecycleTextureActivity;
 import com.animation_study.activity.RetrofitActivity;
 import com.animation_study.activity.ScrollBigActivity;
 import com.animation_study.activity.SongActivity;
+import com.animation_study.activity.SpanActivity;
 import com.animation_study.activity.SqlitActivity;
 import com.animation_study.activity.StudyJCVideoActivity;
 import com.animation_study.activity.SystemSetActivity;
@@ -408,6 +409,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void banner(View v) {
         Intent intent = new Intent(this, BannerActivity.class);
+        startActivity(intent);
+    }
+
+    public void span(View v) {
+        Intent intent = new Intent(this, SpanActivity.class);
         startActivity(intent);
     }
 

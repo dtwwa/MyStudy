@@ -221,6 +221,12 @@
             android:onClick="banner"
             android:text="Banner广告滚动" />
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="span"
+            android:text="Span" />
+
 
     </LinearLayout>
 </ScrollView>
